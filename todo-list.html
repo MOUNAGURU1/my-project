@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoListApp</title>
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: skyblue;
+}
+.container {
+  width: 600px;
+  background-color: rgb(244, 243, 243);
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px black;
+}
+h1 {
+  text-align: center;
+  color: blue;
+  font-size: bold;
+  text-shadow: 2px 2px 2px orange;
+}
+input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-right: 10px;
+  outline: none;
+}
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+#todo-list {
+  list-style: none;
+}
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  background-color: orange;
+  margin-top: 5px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SIMPLE TODO APP</h1>
+      <div>
+        <input type="text" id="todo-input" placeholder="enter daily activity" />
+        <button onclick="add()">Add Todo</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+    <script >
+      function add() {
+  var typetext = document.getElementById("todo-input");
+  var text = typetext.value.trim();
+
+  if (text !== "") {
+    var li = document.createElement("li");
+    li.textContent = text;
+
+    var deletebutton = document.createElement("button");
+    deletebutton.textContent = "Delete";
+    deletebutton.classList.add("btn");
+    deletebutton.onclick = function () {
+      li.remove();
+    };
+
+    li.appendChild(deletebutton);
+    document.getElementById("todo-list").appendChild(li);
+
+    typetext.value = "";
+  }
+}
+
+    </script>
+  </body>
+</html>
