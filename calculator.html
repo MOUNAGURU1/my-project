@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CALCULATOR</title>
+  </head>
+  <style>
+    body {
+      margin: 50px;
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+    #calculator {
+      max-width: 400px;
+      margin: auto;
+      border: 5px solid grey;
+      height: 550px;
+      background-color: grey;
+      border-radius: 20px;
+    }
+    button {
+      width: 80px;
+      height: 50px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 22px;
+      margin: 5px;
+      color: white;
+      background-color: black;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: 900;
+    }
+    button:hover {
+      background-color: green;
+    }
+    input {
+      width: 350px;
+      border-radius: 20px;
+
+      height: 50px;
+      font-size: 30px;
+      border: none;
+      outline: none;
+      box-shadow: 2px 2px 5px black;
+      color: blue;
+      background-color: white;
+    }
+    #del {
+      background-color: red;
+    }
+    #cl {
+      background-color: green;
+    }
+    #cl:hover {
+      background-color: red;
+    }
+    h1 {
+      font-size: 40px;
+    }
+  </style>
+  <body>
+    <div id="calculator">
+      <h1>CALCULATOR</h1>
+      <input type="text" id="screen" disabled /><br /><br />
+
+      <button id="cl" onclick="cle()">CL</button>
+      <button id="del" onclick="del()">DEL</button>
+      <button onclick="dispaly('%')">%</button>
+      <button onclick="dispaly('/')">/</button><br /><br />
+      <button onclick="dispaly('+')">+</button>
+      <button onclick="dispaly('-')">-</button>
+      <button onclick="dispaly('*')">*</button>
+      <button onclick="dispaly('9')">9</button><br /><br />
+      <button onclick="dispaly('8')">8</button>
+      <button onclick="dispaly('7')">7</button>
+      <button onclick="dispaly('6')">6</button>
+      <button onclick="dispaly('5')">5</button><br /><br />
+      <button onclick="dispaly('4')">4</button>
+      <button onclick="dispaly('3')">3</button>
+      <button onclick="dispaly('2')">2</button>
+      <button onclick="dispaly('1')">1</button><br /><br />
+
+      <button onclick="dispaly('00')">00</button>
+      <button onclick="dispaly('0')">0</button>
+      <button onclick="dispaly('.')">.</button>
+
+      <button onclick="equal()">=</button>
+    </div>
+
+    <script type="text/javascript">
+      let ans = document.getElementById("screen");
+      function dispaly(num) {
+        ans.value += num;
+      }
+      function equal() {
+        if ((ans.value = eval(ans.value))) {
+        }
+      }
+      function cle() {
+        ans.value = " ";
+      }
+
+      function del() {
+        ans.value = ans.value.slice(0, -1);
+      }
+    </script>
+  </body>
+</html>
