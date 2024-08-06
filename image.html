@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE GALLERY</title>
+    <style>
+       *{
+        margin:0;
+        padding: 0;
+       }
+       body{
+        max-width: 800px;
+        margin:0 auto;
+        
+       }
+       #main{
+        width:600px;
+        margin: 50px auto;
+
+       }
+       h1{
+        text-align: center;
+       }
+       #post{
+        width: 100%;
+        height:500px;
+    
+        padding: 20px;
+        box-shadow: 3px 3px 7px black;
+       }
+       #child{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+       }
+       .hero{
+        width: 700px;
+        height: 100px;
+        margin: 20px 5px;
+       }
+
+    </style>
+</head>
+<body>
+    <h1>HERO IMAGES GALLERY</h1>
+
+    <div id="main">
+        <img id="post" src="poster.jpg" alt="main">
+      <div id="child">
+        <img class="hero" src="surya.jpg" alt="surya">
+        <img  class="hero" src="vijay.jpg" alt="vijay">
+        <img  class="hero" src="ajith.jpg" alt="ajith">
+        <img  class="hero" src="siva.jpg" alt="siva">
+        <img  class="hero" src="dhanush.jpg" alt="dhanush">
+
+    </div>
+   
+    </div>
+ <script>
+    var a = document.querySelectorAll(".hero");
+    var b = document.querySelector("#post");
+    for( var i=0;i<a.length;i++){
+        a[i].addEventListener("click",function(){
+            b.src= this.src
+
+        })
+    }
+ </script>   
+</body>
+</html>
