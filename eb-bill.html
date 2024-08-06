@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EB BILL CALCULATION</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var n = 0;
+
+      const b = prompt("ENTER A CONSUME UNIT DETAILS");
+
+      var c = b - 100;
+      var d = b - 200;
+      var e = b - 300;
+      var f = b - 400;
+      for (i = 0; i <= n; i++) {
+        if (b <= 100) {
+          document.write("FREE NO NEED TO PAY:", b, "units");
+        } else if (b <= 200) {
+            document.write(
+            "AMOUNT PAY PER UNIT 5RS:" + " ",
+            b - 100,
+            "units",
+            "Pay amount:",
+            c * 5
+          );
+        } else if (b <= 300) {
+            document.write(
+            "AMOUNT TO PAY PER UNIT 10RS:",
+            b - 200,
+            "units",
+            "Pay amount:",
+            d * 10
+          );
+        } else if (b <= 400) {
+            document.write(
+            "AMOUNT TO PAY PER UNIT 15RS:",
+            b - 300,
+            "units",
+            "Pay amount:",
+            e * 15
+          );
+        } else if (b <= 500) {
+            document.write(
+            "AMOUNT TO PAY PER UNIT 20RS:",
+            b - 400,
+            "units",
+            "Pay amount:",
+            f * 20
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
